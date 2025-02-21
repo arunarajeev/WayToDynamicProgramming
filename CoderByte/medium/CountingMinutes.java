@@ -4,8 +4,6 @@
  * times. The time will be in a 12 hour clock format.
  * For example: if str is 9:00am-10:00am then the output should be 60.
  * If str is 1:00pm-11:00am the output should be 1320.
- *
- * @author Nick Livens
  */
 
 package medium;

@@ -1,4 +1,4 @@
-package Simple;
+package medium;
 /* 
  * Have the function LetterCountI(str) take the str parameter being passed 
 and return the first word with the greatest
@@ -11,16 +11,17 @@ and return the first word with the greatest
 
 import java.util.HashMap;
 
-public class CoderByte_LetterCountOne {
+public class LetterCount_GreatestWord {
     public static void main(String[] args) {
-        String str = "Our ;mission inform'ation universally ac-cessible-";
+        String str = "Our ;mission,inform'ation universally,ac-cessible-";
         System.out.println(letterCount(str));
     }
 
     private static String letterCount(String str) {
-        str = str.replaceAll("[^a-zA-Z ]", "");
-        System.out.println(str);
-        String arr[] = str.split(" ");
+        str = str.replaceAll("[^a-zA-Z ,]", "");
+        //System.out.println(str);
+        String arr[] = str.split("[ ,]");
+        //System.out.println(arr.length);
         HashMap<Integer, String> map = new HashMap<>();
         int greatestLettersCount = 0;
         for (int i = 0; i < arr.length; i++) {
