@@ -22,29 +22,30 @@ Constraints:
 1 <= nums.length <= 100
 1 <= nums[i] <= 100 */
 
-class L1512_NumberofGoodPairs {
+class L1512_NumberofGoodPairs_revise {
 
     public static void main(String[] args) {
-        int nums[] = {1,2,3,1,1,3};
+        int nums[] = { 1, 2, 3, 1, 1, 3 };
         System.out.println(numIdenticalPairs_usingPrefix(nums));
-        System.out.println(numIdenticalPairs_usingFrequencyArray(nums));
+        System.out.println(numIdenticalPairs_usingAltitude(nums));
 
     }
 
-    //This code logic beats 100% in runtime and 79% in memory on Leetcode
-    private static int numIdenticalPairs_usingFrequencyArray(int[] nums) {
+    // This code logic beats 100% in runtime and 79% in memory on Leetcode
+    private static int numIdenticalPairs_usingAltitude(int[] nums) {
         int count = 0;
-        int arrNums[] = new int[101];
+        // nums = [1,2,3,1,1,3]
+        int freqArr[] = new int[101];
         for (int i = 0; i < nums.length; i++) {
-            ++arrNums[nums[i]];
-            if (arrNums[nums[i]] > 1) {
-                count += arrNums[nums[i]] - 1;
-            }
+            ++freqArr[nums[i]];
+            if (freqArr[nums[i]] > 1)
+                count += freqArr[nums[i]] - 1;
         }
+
         return count;
     }
 
-    //This code logic beats 87% in runtime and 27% in memory on Leetcode
+    // This code logic beats 87% in runtime and 27% in memory on Leetcode
     public static int numIdenticalPairs_usingPrefix(int[] nums) {
         int count = 0;
         for (int i = nums.length - 1; i >= 0; i--) {
