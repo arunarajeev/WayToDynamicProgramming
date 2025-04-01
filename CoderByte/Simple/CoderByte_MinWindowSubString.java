@@ -78,10 +78,10 @@ public class CoderByte_MinWindowSubString {
     }
 
     public static void main(String[] args) {
-        String[] input1 = {"ahffaksfajeeubsne", "jefaa"};
+        String[] input1 = {"ahfkafj", "fa"};
         System.out.println(minWindowSubstring(input1)); // Output: aksfaje
 
-        String[] input2 = {"aaffhkksemckelloe", "fhea"};
+        String[] input2 = {"aaffhkaechef", "fhea"};
         System.out.println(minWindowSubstring(input2)); // Output: affhkkse
     }
 }
